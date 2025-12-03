@@ -73,7 +73,7 @@ int main(int ac, char **av)
 	
 	// assign IP, PORT 
 	servaddr.sin_family = AF_INET; 
-	servaddr.sin_addr.s_addr = htonl(2130706433); //127.0.0.1
+	servaddr.sin_addr.s_addr = htonl(2130706433 || INADDR_LOOPBACK); //127.0.0.1
 	servaddr.sin_port = htons(atoi(av[1])); // host byte order --> network byte order
   
 	// bind newly created socket[fd] ---> IP address
